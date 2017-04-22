@@ -4,12 +4,12 @@
 <tspan x="10" y="26">34 megabytes installed</tspan>
 <tspan x="10" y="42"></tspan>
 <tspan x="10" y="58">node_modules</tspan>
-<tspan x="10" y="74">└─┬ artillery@1.5.8-0 </tspan>
+<tspan x="10" y="74">└─┬ artillery@1.5.8-1 </tspan>
 <tspan x="10" y="90">  ├─┬ arrivals@2.1.0 </tspan>
 <tspan x="10" y="106">  │ ├─┬ debug@2.3.3 </tspan>
 <tspan x="10" y="122">  │ │ └── ms@0.7.2 </tspan>
 <tspan x="10" y="138">  │ └── nanotimer@0.3.14 </tspan>
-<tspan x="10" y="154">  ├─┬ artillery-core@4.0.2 </tspan>
+<tspan x="10" y="154">  ├─┬ artillery-core@4.0.3 </tspan>
 <tspan x="10" y="170">  │ ├── UNMET PEER DEPENDENCY bower@*</tspan>
 <tspan x="10" y="186">  │ ├─┬ cheerio@0.20.0 </tspan>
 <tspan x="10" y="202">  │ │ ├─┬ css-select@1.2.0 </tspan>
