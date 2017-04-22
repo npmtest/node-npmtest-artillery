@@ -1,6 +1,6 @@
 # npmtest-artillery
 
-#### basic test coverage for  [artillery (v1.5.6)](https://github.com/shoreditch-ops/artillery#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-artillery.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-artillery) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-artillery.svg)](https://travis-ci.org/npmtest/node-npmtest-artillery)
+#### basic test coverage for  artillery (v1.5.8-1)  [![npm package](https://img.shields.io/npm/v/npmtest-artillery.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-artillery) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-artillery.svg)](https://travis-ci.org/npmtest/node-npmtest-artillery)
 
 #### Load-testing for HTTP and WebSocket-based applications
 
@@ -35,28 +35,47 @@
 ```json
 
 {
-    "author": {
-        "name": "Hassy Veldstra"
+    "name": "artillery",
+    "version": "1.5.8-1",
+    "description": "Load-testing for HTTP and WebSocket-based applications",
+    "main": "./lib",
+    "engines": {
+        "node": ">= 4.2.0"
     },
+    "scripts": {
+        "test": "bash test/runner.sh",
+        "is_formatted": "find . -name '*.js' | grep -v node_modules | grep -v coverage | xargs jscs --preset=google",
+        "is_linted": "find . -name '*.js' | grep -v node_modules | grep -v coverage | xargs eslint",
+        "coverage": "npm_config_coverage=y npm test && istanbul report html text-summary"
+    },
+    "keywords": [
+        "load testing",
+        "stress testing",
+        "benchmark",
+        "performance",
+        "blackbox testing"
+    ],
+    "author": "Hassy Veldstra <h@veldstra.org>",
+    "contributors": [
+        "Kieran Gorman (https://github.com/kjgorman)",
+        "Antony Jones (https://github.com/antony)"
+    ],
+    "license": "MPL-2.0",
+    "preferGlobal": true,
+    "man": "./man/artillery.1",
     "bin": {
         "artillery": "./bin/artillery"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/shoreditch-ops/artillery.git"
     },
     "bugs": {
         "url": "https://github.com/shoreditch-ops/artillery/issues"
     },
-    "contributors": [
-        {
-            "name": "Kieran Gorman",
-            "url": "https://github.com/kjgorman"
-        },
-        {
-            "name": "Antony Jones",
-            "url": "https://github.com/antony"
-        }
-    ],
     "dependencies": {
         "arrivals": "^2.0.2",
-        "artillery-core": "3.0.0",
+        "artillery-core": "4.0.3",
         "async": "^1.0.0",
         "chalk": "1.1.3",
         "cli": "^0.6.6",
@@ -70,7 +89,6 @@
         "tmp": "0.0.28",
         "yaml-js": "0.1.4"
     },
-    "description": "Load-testing for HTTP and WebSocket-based applications",
     "devDependencies": {
         "bats": "^0.4.2",
         "eslint": "^0.21.2",
@@ -83,50 +101,9 @@
         "tape": "^4.0.0",
         "uuid": "^2.0.1"
     },
-    "directories": {},
-    "dist": {
-        "shasum": "6ffbff07b3071d7f653e421be10c4e389e51895a",
-        "tarball": "https://registry.npmjs.org/artillery/-/artillery-1.5.6.tgz"
-    },
-    "engines": {
-        "node": ">= 4.2.0"
-    },
-    "gitHead": "37d4e7c076e6171ae478b88531903fc12efb5d66",
-    "homepage": "https://github.com/shoreditch-ops/artillery#readme",
-    "keywords": [
-        "load testing",
-        "stress testing",
-        "benchmark",
-        "performance",
-        "blackbox testing"
-    ],
-    "license": "MPL-2.0",
-    "main": "./lib",
-    "maintainers": [
-        {
-            "name": "hhvhhv"
-        }
-    ],
-    "man": [
-        "./man/artillery.1"
-    ],
-    "name": "artillery",
-    "optionalDependencies": {},
     "pre-commit": [
         "is_linted"
-    ],
-    "preferGlobal": true,
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/shoreditch-ops/artillery.git"
-    },
-    "scripts": {
-        "coverage": "npm_config_coverage=y npm test && istanbul report html text-summary",
-        "is_formatted": "find . -name '*.js' | grep -v node_modules | grep -v coverage | xargs jscs --preset=google",
-        "is_linted": "find . -name '*.js' | grep -v node_modules | grep -v coverage | xargs eslint",
-        "test": "bash test/runner.sh"
-    },
-    "version": "1.5.6"
+    ]
 }
 ```
 
